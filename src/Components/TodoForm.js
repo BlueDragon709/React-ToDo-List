@@ -21,6 +21,7 @@ export default class TodoForm extends Component {
       text: this.state.text,
       complete: false
     });
+
     this.setState({
       text: ""
     });
@@ -29,7 +30,12 @@ export default class TodoForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input name="text" placeholder="todo" onChange={this.handleChange} />
+        <input
+          name="text"
+          value={this.state.text}
+          placeholder="todo"
+          onChange={this.handleChange}
+        />
         <button onClick={this.handleSubmit}>add todo</button>
       </form>
     );
